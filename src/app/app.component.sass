@@ -1,0 +1,86 @@
+@use './_base'
+nav
+  width: 120px
+  min-height: 100%
+  background-color: base.$white-color
+  z-index: 110
+  left: 0px
+  @media only screen and (max-width: 800px)
+    position: fixed
+    transition: transform 0.3s linear
+    transform: translateX(-100%)
+.openNav
+    @media only screen and (max-width: 800px)
+      left: 0
+      transition: transform 0.3s linear
+      transform: translateX(0%)
+#hamburger
+  display: none
+  @media only screen and (max-width: 800px)
+    display: block
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 110
+    width: 80px
+    height: 80px
+    padding: 20px
+    border-radius: 0 0 80px 0
+    opacity: 0.8
+  &-inside
+    position: relative
+    input
+      display: block
+      width: 40px
+      height: 32px
+      position: absolute
+      top: -7px
+      left: -5px
+      cursor: pointer
+      opacity: 0
+      z-index: 12
+      -webkit-touch-callout: none
+      &:checked ~ span
+        opacity: 1
+        transform: rotate(45deg)
+        background: #000
+        &:nth-child(2)
+          transform: rotate(45deg) translate(2px, -1px)// transform-origin: 0% 0%
+        &:nth-child(4)
+          transform: rotate(-45deg)
+        &:nth-child(3)
+          transform: rotate(0deg)
+          transition: opacity 0.1s linear
+          opacity: 0
+    span
+      display: block
+      width: 33px
+      height: 4px
+      margin-bottom: 5px
+      position: relative
+      background: #fff
+      border-radius: 3px
+      z-index: 11
+      transform-origin: 4px 0px
+      transition: transform 0.3s linear
+#content
+  position: relative
+  width: 800px
+  min-height: 100vh
+  padding: 0px 20px 0px 30px
+  @media only screen and (max-width: 950px)
+    width: calc( 100% - 120px - 20px )
+  @media only screen and (max-width: 800px)
+    width: 100%
+    padding: 50px 15px 0px 15px
+#absolute-background
+  position: fixed
+  z-index: -1
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  display: grid
+  grid-template-columns: 50% 50%
+#left
+  background-color: base.$white-color

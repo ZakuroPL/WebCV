@@ -1,0 +1,17 @@
+<div class="gTopRight show">
+  <div *ngFor="let p of myProjects" class="gridProject">
+    <div class="pText">
+      <h3>{{p.name}}</h3>
+      <p>{{p.description}}</p>
+    </div>
+    <div class="pImg">
+      <img src="../../assets/{{p.picture}}" alt="project picture">
+    </div>
+    <div class="pLinks">
+      <a target="blank" class="pLinks-a pLinks-a-git" href="{{p.gitHub}}">GitHub</a>
+      <a target="blank" class="pLinks-a pLinks-a-live" *ngIf="p.live" href="{{p.live}}">Live</a>
+    </div>
+    <h3 class="gridProject-absolute gOrange-text">{{p.type}}</h3>
+  </div>
+</div>
+

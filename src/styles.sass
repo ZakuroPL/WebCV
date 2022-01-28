@@ -1,0 +1,76 @@
+@use './app/_base'
+@mixin myColor($color, $hamburgerColor)
+  background-color: $color
+  color: #000
+  &-text
+    color: $color
+  &-hamburger
+    transition: background-color 0.3s linear
+    background-color: $hamburgerColor
+  &-hamburgerX
+    background-color: $hamburgerColor
+    transition: background-color 0.3s linear
+    background-color: base.$white-color
+.gFlex
+  display: flex
+  justify-content: center
+//default Zakuro SASS
+*
+  box-sizing: border-box
+  margin: 0px
+  padding: 0px
+body
+  font-family: 'Kanit', sans-serif
+  font-size: 15px
+ul
+  list-style-type: none
+input, textarea
+  &:focus
+    outline: none
+button
+  cursor: pointer
+  user-select: none
+  -webkit-tap-highlight-color: transparent
+  border: none
+a
+  text-decoration: none
+.gPointer
+  cursor: pointer
+@media only screen and (max-width: 800px)
+  input, textarea
+    font-size: 16px
+// END default Zakuro SASS
+body
+  background-color: #fff
+p
+  text-align: justify
+.gHBorder
+  color: #fff
+  border-bottom: 2px solid white
+  &-black
+    color: #000
+.gCenterRight
+  padding: 30px 0px
+  @media only screen and (min-width: 801px)
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: calc( 100% - 60px )
+.gTopRight
+  padding: 30px 0px
+.gBlue
+  @include myColor($color: base.$blue-color, $hamburgerColor: base.$green-color)
+.gGreen
+  @include myColor($color: base.$green-color, $hamburgerColor: base.$purple-color)
+.gOrange
+  @include myColor($color: base.$orange-color, $hamburgerColor: base.$green-color)
+.gPurple
+  @include myColor($color: base.$purple-color, $hamburgerColor: base.$green-color)
+
+@keyframes anim31
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+.show
+  animation: anim31 0.8s linear forwards

@@ -1,0 +1,47 @@
+@use '../_base'
+@keyframes anim1
+  0%
+    transform: translate(0px, -50%)
+  100%
+    transform: translate(-10px, -50%)
+@keyframes anim2
+  from
+    transform: translate(-10px, -50%)
+  to
+    transform: translate(0px, -50%)
+@mixin bColor($color)
+  span
+    animation: anim2 0.5s linear forwards
+  &:hover
+    background-color: $color
+    span
+      animation: anim1 0.5s linear forwards
+ul
+  font-family: 'Bebas Neue', sans-serif
+  position: fixed
+  top: 50%
+  transform: translateY(-50%)
+  font-size: 30px
+  width: 120px
+li
+  height: 50px
+  width: 100%
+  text-align: right
+  position: relative
+  span
+    position: absolute
+    width: max-content
+    padding-right: 2px
+    right:0px
+    top: calc( 50% + 1px )
+    transform: translateY(-50%)
+#blue
+  @include bColor($color: base.$blue-color)
+#green
+  @include bColor($color: base.$green-color)
+#orange
+  @include bColor($color: base.$orange-color)
+#purple
+  @include bColor($color: base.$purple-color)
+.white
+  color: #fff

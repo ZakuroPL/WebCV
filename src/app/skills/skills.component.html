@@ -1,0 +1,24 @@
+<div class="gCenterRight show">
+  <h2 class="gHBorder gHBorder-black">Main technologies:</h2>
+  <div *ngFor="let i of techonologies" class="iconsDiv">
+    <div *ngIf="i.category == 'M'" class="skill">
+      <div class="skill-left">
+        <img src="../../assets/icons/{{i.picture}}.svg" alt="icon">
+      </div>
+      <p class="{{i.color}}-text">{{i.name}}</p>
+    </div>
+  </div>
+  <h2 class="gHBorder gHBorder-black" style="margin-top: 10px;">Also:</h2>
+  <div *ngFor="let i of techonologies" class="iconsDiv">
+    <div *ngIf="i.category == 'A'" class="skill">
+      <div class="skill-left">
+        <img src="../../assets/icons/{{i.picture}}.svg" alt="icon">
+      </div>
+      <p class="{{i.color}}-text">{{i.name}}</p>
+    </div>
+  </div>
+  <h2 class="gHBorder gHBorder-black" style="margin-top: 10px;">I'm able to:</h2>
+  <ul style="list-style: circle  inside">
+    <li *ngFor="let i of skills">{{i}}</li>
+  </ul>
+</div>

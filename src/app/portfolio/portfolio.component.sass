@@ -1,0 +1,51 @@
+@use '../_base'
+.gridProject
+  position: relative
+  display: grid
+  grid-template-columns: 300px auto
+  grid-template-rows: auto 40px
+  grid-template-areas: "pImg pText" "pImg pLinks"
+  background-color: #fff
+  border: 4px solid #fff
+  margin-bottom: 30px
+  border-radius: 10px
+  @media only screen and (max-width: 600px)
+    grid-template-columns: auto
+    grid-template-rows: auto auto 40px
+    grid-template-areas: "pImg" "pText" "pLinks"
+  &-absolute
+    position: absolute
+    bottom: 0px
+    right: 10px
+.pText
+  grid-area: pText
+.pImg
+  grid-area: pImg
+  margin-right: 10px
+  display: flex
+  align-items: center
+  @media only screen and (max-width: 600px)
+    margin-right: 0px
+  img
+    width: 100%
+    border-radius: 10px 0px 0px 10px
+    @media only screen and (max-width: 600px)
+      border-radius: 10px 10px 0px 0px
+.pLinks
+  grid-area: pLinks
+  align-self: end
+  padding-bottom: 5px
+  &-a
+    padding: 5px
+    color: #fff
+    border-radius: 2px
+    margin-right: 5px
+    &-git
+      background-color: base.$purple-color
+      @media only screen and (max-width: 600px)
+        border-radius: 0px 0px 0px 10px
+    &-live
+      background-color: base.$blue-color
+
+
+

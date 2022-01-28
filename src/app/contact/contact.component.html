@@ -1,0 +1,26 @@
+<div class="gCenterRight show">
+  <form [formGroup]="emailForm" (submit)="sendButton()">
+      <div class="contact">
+          <input formControlName="email" type="email" placeholder="your email">
+          <p *ngIf="isClicked && f.email.errors?.required">Write your email address</p>
+          <p *ngIf="isClicked && f.email.errors?.pattern">Write your email address correctly</p>
+      </div>
+      <div class="contact">
+        <input formControlName="name" type="text" placeholder="your name">
+        <p *ngIf="isClicked && f.name.errors?.required">Write your name</p>
+      </div>
+      <div class="contact contact-c2">
+        <textarea rows="6" formControlName="message" placeholder="your message"></textarea>
+        <p *ngIf="isClicked && f.message.errors?.required">You forgot wrote message</p>
+        <p *ngIf="isClicked && f.message.errors?.minlength">Your message is too short</p>
+      </div>
+      <button class="contact-button" [disabled]="isSended || isProcessing" type="submit">
+        <span *ngIf="!isProcessing">Send</span>
+        <span id="processing" *ngIf="isProcessing">&#9679;</span>
+      </button>
+      <h3 *ngIf="isSended">Your message send successfully.</h3>
+      <h3 *ngIf="isErrorSend">Error. Please try again.</h3>
+  </form>
+
+</div>
+

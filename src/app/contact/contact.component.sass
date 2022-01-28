@@ -1,0 +1,79 @@
+@use '../_base'
+@mixin style()
+  width: 100%
+  padding: 5px
+  border: 3px solid #fff
+  border-radius: 8px
+  background-color: base.$purple-color
+  font-family: 'Kanit', sans-serif
+  color: #fff
+  &::placeholder
+    color: #fff
+@mixin pp()
+  p
+    position: absolute
+    bottom: -20px
+    color: #fff
+@keyframes anim3
+  0%
+    transform: translate(-50%, -50%)
+  25%
+    transform: translate(-350%, -50%)
+  75%
+    transform: translate(300%, -50%)
+  100%
+    transform: translate(-50%, -50%)
+form
+  position: relative
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  width: 100%
+  h3
+    position: absolute
+    width: max-content
+    bottom: -25px
+    left: 50%
+    transform: translateX(-50%)
+    color: #fff
+.contact
+  width: calc( 50% - 10px )
+  position: relative
+  @include pp()
+  input
+    @include style()
+    &:-webkit-autofill
+     -webkit-text-fill-color: #fff
+     -webkit-box-shadow: 0 0 0px 1000px base.$purple-color inset
+  @media only screen and (max-width: 800px)
+    width: 100%
+    margin-bottom: 30px
+  &-c2
+    width: 100%
+    margin-top: 24px
+    textarea
+      @include style()
+      resize: none
+      display: block
+    @media only screen and (max-width: 800px)
+      margin-top: 0px
+  &-button
+    @include style()
+    color: base.$purple-color
+    background-color: #fff
+    margin-top: 24px
+    position: relative
+    height: 30px
+    @media only screen and (max-width: 800px)
+      margin-top: 0px
+    span
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+#processing
+  font-size: 20px
+  animation: anim3 3s linear infinite normal
+
+
+

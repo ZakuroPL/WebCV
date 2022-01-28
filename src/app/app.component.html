@@ -1,0 +1,21 @@
+<div class="gFlex">
+  <nav [ngClass]="{openNav: isMenuOpened}">
+    <app-nav></app-nav>
+  </nav>
+  <div id="content" class="{{backgroundColor}}" (click)="closeNav()">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div id="hamburger" class="{{backgroundColor}}-hamburger" [ngClass]="[isMenuOpened ? hamburgerColor : '']">
+  <div id="hamburger-inside">
+    <input type="checkbox" [checked]="isMenuOpened == true" (click)="inputClick()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<div id="absolute-background">
+  <div id="left"></div>
+  <div class="{{backgroundColor}}"> </div>
+</div>
+
